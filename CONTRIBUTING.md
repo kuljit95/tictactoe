@@ -23,3 +23,29 @@ I worked on the issue to save the winning score and to save the user selected th
 * IndexedDB <br>
 from the above issues, I used the local storage method to solve this issue. Local storage allows you to store data with no expiration date. It remains even after the browser is closed and reopened. You can use the localStorage object to set and retrieve values.
 ## Code  
+### app.js
+```javascript
+/* Score update logic */
+
+document.addEventListener("DOMContentLoaded", function() {
+// Retrieve the highest score from local storage, if it exists
+var highestScore = localStorage.getItem('highestScore');
+if (highestScore) {
+document.getElementById('highestScore').textContent = highestScore;
+} else {
+// If the highest score is not found in local storage, initialize it with a default value
+localStorage.setItem('highestScore', 0);
+} 
+
+// Example usage: Call updateHighestScore() whenever a new high score is achieved
+// For example, assuming you have a function called 'updateScore' that updates the score display
+
+});
+// Update highest score
+function updateHighestScore(newScore) {
+var currentHighestScore = parseInt(localStorage.getItem('highestScore'));
+currentHighestScore += newScore;
+localStorage.setItem('highestScore', currentHighestScore);
+document.getElementById('highestScore').textContent = currentHighestScore;
+} 
+```

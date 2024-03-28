@@ -8,7 +8,7 @@ Here are the basic rules:
 2. Players take turns marking a space in the grid with their symbol (X or O). <br>
 3. The first player to get three of their symbols in a row (horizontally, vertically, or diagonally) wins the game. <br>
 4. If the grid is filled and neither player has achieved a winning combination, the game is a draw. <br>
-## Link :
+## Link : https://github.com/kuljit95/tictactoe
 ## Summary of Issue examined :
 The summary of this issue is to enhance the tic-tac-toe game by adding two new features:
 
@@ -21,7 +21,7 @@ I worked on the issue to save the winning score and to save the user selected th
 * Local Storage
 * Session Storage
 * IndexedDB <br>
-from the above issues, I used the local storage method to solve this issue. Local storage allows you to store data with no expiration date. It remains even after the browser is closed and reopened. You can use the localStorage object to set and retrieve values.
+from the above methods, I used the local storage method to solve this issue. Local storage allows you to store data with no expiration date. It remains even after the browser is closed and reopened. You can use the localStorage object to set and retrieve values.
 # Code  
 ## index.html
 Add high score label

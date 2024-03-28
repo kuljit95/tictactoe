@@ -52,3 +52,7 @@ Add an event listener to the volume slider
 ```javascript
  volumeSlider.addEventListener('input', changeVolume);
 ```
+## Reflection 
+In this issue, I just created the documentation to solve this issue. I did not implement it. For creating a slider to adjust the volume, I did lots of research. It was bit difficult for me to find the exact idea to solve this issue. But, finally I got the idea to solve this issue which I mentioned above. I am also sharing the external from I got the idea about this.
+## Discussion of next steps:
+For next step, I would try to implement this method so that I can confirm that this idea is worked.

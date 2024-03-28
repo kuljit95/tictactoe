@@ -9,6 +9,7 @@ Here are the basic rules:
 3. The first player to get three of their symbols in a row (horizontally, vertically, or diagonally) wins the game. <br>
 4. If the grid is filled and neither player has achieved a winning combination, the game is a draw. <br>
 ## Link : https://github.com/kuljit95/tictactoe
+## Link: https://github.com/kuljit95/tictactoe/edit/master/CONTRIBUTING.md
 ## Summary of Issue examined : (https://github.com/yelynn1/tictactoe/issues/87)
 The summary of this issue is to enhance the tic-tac-toe game by adding two new features:
 

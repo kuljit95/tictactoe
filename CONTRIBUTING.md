@@ -88,5 +88,7 @@ Here, in checkWinner(), I make a call to ``` javascript updateHighestScore(10); 
 
 ## Reflection 
 Yes, I have solved the issue. When, I started to work on this project, at that time it is hard for me to find the exact method to solve the issue because their are four different methods are available to solve this issue. After doing lots of research, finally I decided to work with local storage. Local Storage in JavaScript provides a way to store key-value pairs persistently within the user's browser. During the development method, I faced lots of issues but with the help of external resources and youtube videos, I implemented this method.
+## Discussion of next steps: 
+For next step, I decided that I would create a pull request so that I can give this solution to (https://github.com/yelynn1/tictactoe/issues/87).  
 # Reference :
 Reference regarding local storage method: https://blog.logrocket.com/localstorage-javascript-complete-guide/

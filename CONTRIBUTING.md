@@ -22,30 +22,67 @@ I worked on the issue to save the winning score and to save the user selected th
 * Session Storage
 * IndexedDB <br>
 from the above issues, I used the local storage method to solve this issue. Local storage allows you to store data with no expiration date. It remains even after the browser is closed and reopened. You can use the localStorage object to set and retrieve values.
-## Code  
-### app.js
+# Code  
+## index.html
+Add high score label
+``` javascript
+<h5>Highest Score:<span id="highestScore">0</span></h5>
+```
+Assign the light mode value to theme 
+```javascript
+darkToggle[1].textContent = "Light Mode";
+     updateTheme("black");
+```
+Assign the dark mode value to theme 
+```javascript
+darkToggle[1].textContent = "Dark Mode";
+     updateTheme("white");
+```
+## app.js
+Add listner on page load
 ```javascript
 /* Score update logic */
 
 document.addEventListener("DOMContentLoaded", function() {
-// Retrieve the highest score from local storage, if it exists
-var highestScore = localStorage.getItem('highestScore');
-if (highestScore) {
-document.getElementById('highestScore').textContent = highestScore;
-} else {
-// If the highest score is not found in local storage, initialize it with a default value
-localStorage.setItem('highestScore', 0);
-} 
+    // Retrieve the highest score from local storage, if it exists
+    var highestScore = localStorage.getItem('highestScore');
+    if (highestScore) {
+        document.getElementById('highestScore').textContent = highestScore;
+    } else {
+        // If the highest score is not found in local storage, initialize it with a default value
+        localStorage.setItem('highestScore', 0);
+    }
 
+    //  creating values for theme 
+     //localStorage.setItem('themeName', "white");
+     if(localStorage.getItem('themeName') == "black")
+     {
+        myFunction();
+     }
+});
+```
+Update Highest Score
+```javascript
 // Example usage: Call updateHighestScore() whenever a new high score is achieved
 // For example, assuming you have a function called 'updateScore' that updates the score display
-
-});
 // Update highest score
 function updateHighestScore(newScore) {
-var currentHighestScore = parseInt(localStorage.getItem('highestScore'));
-currentHighestScore += newScore;
-localStorage.setItem('highestScore', currentHighestScore);
-document.getElementById('highestScore').textContent = currentHighestScore;
-} 
+    var currentHighestScore = parseInt(localStorage.getItem('highestScore'));
+    currentHighestScore += newScore;
+    localStorage.setItem('highestScore', currentHighestScore);
+    document.getElementById('highestScore').textContent = currentHighestScore;
+}
 ```
+Update Theme
+```javascript
+// update Theme
+function updateTheme(themeColor) {
+    localStorage.setItem('themeName', themeColor);
+
+}
+```
+Call to update score <br>
+Here, in checkWinner(), I make a call to ``` javascript updateHighestScore(10); ``` function.
+
+# Reference :
+Reference regarding local storage method: https://blog.logrocket.com/localstorage-javascript-complete-guide/

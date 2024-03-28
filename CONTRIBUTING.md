@@ -12,4 +12,4 @@ Here are the basic rules:
 ## Summary of Issue examined : https://github.com/yelynn1/tictactoe/issues/60
 The summary of this issue is to enhance the tic-tac-toe game by adding the volume slider. A volume slider for music is a user interface component that allows users to adjust the volume of music playback. It typically consists of a horizontal bar (slider) that users can drag or click to change the volume level.
 A volume slider for music provides users with a convenient way to control the audio output level, allowing them to personalize their listening experience according to their preferences and environmental conditions.
-##Detailed discussion of issues examined to :
+## Detailed discussion of issues examined to :

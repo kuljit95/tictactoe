@@ -102,6 +102,7 @@
     <div class="container-custom">
           <h1>Tic-Tac-Toe</h1>
           <h4>Scoreboard</h4>
+          <h5>Highest Score:<span id="highestScore">0</span></h5>
           <table>
             <tr>
               <th><button type="button"  name="button" onclick="singlePlayer()">Single Player</button></th>
@@ -164,9 +165,11 @@ function myFunction() {
    });
 
    if (darkToggle[1].textContent === "Dark Mode"){
-     darkToggle[1].textContent = "Light Mode"
+     darkToggle[1].textContent = "Light Mode";
+     updateTheme("black");
    } else {
-     darkToggle[1].textContent = "Dark Mode"
+     darkToggle[1].textContent = "Dark Mode";
+     updateTheme("white");
    }
 
    hero.classList.toggle("dark-hero");

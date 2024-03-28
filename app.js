@@ -6,6 +6,45 @@ let board_full = false;
 let ai_level;
 let lastMove = null; // Variable to store the last move
 
+
+/* Score update logic */
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve the highest score from local storage, if it exists
+    var highestScore = localStorage.getItem('highestScore');
+    if (highestScore) {
+        document.getElementById('highestScore').textContent = highestScore;
+    } else {
+        // If the highest score is not found in local storage, initialize it with a default value
+        localStorage.setItem('highestScore', 0);
+    }
+
+    //  creating values for theme 
+     //localStorage.setItem('themeName', "white");
+     if(localStorage.getItem('themeName') == "black")
+     {
+        myFunction();
+     }
+});
+
+// Example usage: Call updateHighestScore() whenever a new high score is achieved
+// For example, assuming you have a function called 'updateScore' that updates the score display
+// Update highest score
+function updateHighestScore(newScore) {
+    var currentHighestScore = parseInt(localStorage.getItem('highestScore'));
+    currentHighestScore += newScore;
+    localStorage.setItem('highestScore', currentHighestScore);
+    document.getElementById('highestScore').textContent = currentHighestScore;
+}
+
+// update Theme
+function updateTheme(themeColor) {
+    localStorage.setItem('themeName', themeColor);
+
+}
+
+/* End Score */
+
 const render_board = () => {
     const board_container = document.querySelector(".play-area");
     board_container.innerHTML = "";
@@ -246,7 +285,7 @@ const checkWinner = () => {
         audio.pause();
         endMusic = new Audio("audio/win.wav");
         endMusic.play();
-
+        updateHighestScore(10);
     }
     else if (res == "X") {
         if (gameMode == 1)  winner_statement.innerText = "Computer Won"; //Single player mode
@@ -261,6 +300,7 @@ const checkWinner = () => {
         audio.pause();
         endMusic = new Audio("audio/gameover.wav");
         endMusic.play();
+        updateHighestScore(10);
     }
     else if (board_full) {
         winner_statement.innerText = "Draw...";

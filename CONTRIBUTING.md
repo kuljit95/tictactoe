@@ -19,8 +19,8 @@ I worked to make the documentation to solve this issue which is described as fol
 1. Create the Audio Player:
   ```javascript
 <audio id="myAudio" controls>
-  <source src="your-audio-file.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
+  <source src="kk-audio-file.mp3" type="audio/mpeg">
+  audio element.
 </audio>
 ```
 
